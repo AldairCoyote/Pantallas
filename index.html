@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/prueba.css">
+    <link rel="icon" href="img/amara.ico">
+    <title>Home</title>
+</head>
+<body>
+    <div class="container">
+            <div class="row">
+                <nav class="nav-extended">
+                    <div class="nav-wrapper">
+                        <a class="brand-logo center">Amara</a>
+
+                        <!-- Dropdown -->
+                        <ul id="nav-mobile" class="right hide-on-med-and-down">
+                            <li><a class="dropdown-trigger" data-target="dropdown1">Usuario<i class="material-icons right">account_circle</i></a></li>
+                        </ul>
+
+                        <!-- contenido del dropdown -->
+                        <ul id="dropdown1" class="dropdown-content">
+                            <li><a class="red-text" href="#!">Salir</a></li>
+                        </ul>
+
+                        <!-- version en moviles -->
+                        <ul>
+                            <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">account_circle</i></a>
+                        </ul>
+
+                        <!-- contenido en moviles -->
+                        <ul class="sidenav" id="mobile-demo">
+                            <li><a href="#">salir</a></li>
+                        </ul>
+
+                    </div>
+                </nav>
+            </div>
+    <div class="collection">
+        <div class="row">
+            <!-- tamaño de las ventanas -->
+            <div class="col s12 m12 l12">
+                <div class="card">
+                    <div class="row">
+                        <div class="col s6 m6 l12 card-content">
+                            <a onclick="cambiarColor()" id="prueba" class="btn-floating pulse btn-small waves-effect waves-light right red"></a>
+                            <span class="m12 l12 s12 card-title">Pedidos de Venta</span>
+                        </div>
+                        <div class="card-action">
+                            <table class="highlight">
+                                    <thead>
+                                        <tr>
+                                            <th>MATERIAL</th>
+                                            <th>DESCRIPCIÓN</th>
+                                            <th>LOTE</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="psd"></tbody>
+                                </table>    
+                            <a class="center" href="venta.html">Ver Pedidos</a>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div class="col s12 m12 l12">
+                <div class="card">
+                    <div class="card-content">
+                        <i class="material-icons small right">assignment</i>
+                        <span class="card-title">Pedidos en Proceso</span>
+                        <div class="card-action">
+                            <a class="left" href="proceso.html">Enlace</a>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div class="col s12 m12 l12">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">Pedidos Completos</span>
+                        <p class="section"></p>
+                        <div class="card-action">
+                            <i class="material-icons small right">assignment_turned_in</i>
+                            <a class="left" href="completos.html">Enlace</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m12 l12">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">Monitor</span>
+                        <p class="section"></p>
+                    <div class="card-action">
+                        <i class="material-icons small right">tv</i>
+                        <a class="left" href="monitor.html">Enlace</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>      
+    </div>
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
+        <script src="js/prueba.js"></script>
+  </body>
+</html>

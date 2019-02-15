@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="prueba.css">
+    <link rel="icon" href="amara.ico">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <nav class="nav-extended">
+                <div class="nav-wrapper">
+                    <a class="brand-logo center">Pedidos Completos</a>
+                </div>
+            </nav>
+            <!-- pedidos -->
+            <div class="col s3">
+                <ul id="nav-mobile" class="sidenav sidenav-fixed">
+                    <nav>
+                        <div class="nav-wrapper white">
+                            <form>
+                            <div class="input-field">
+                                <input id="search" type="search" placeholder="Buscar" required>
+                                <label class="label-icon" for="search"><i class="material-icons black-text">search</i></label>
+                                <i class="material-icons">close</i>
+                            </div>
+                            </form>
+                        </div>
+                        <div id="pedidos" class="collection">
+                            <a href="#" class="collection-item">Pedido</a>
+                            <a href="#!" class="collection-item">Pedido</a>                            
+                        </div>
+                    </nav>
+                </ul>
+            </div>
+            <!-- detalles de pedidos -->
+            <div class="bold col s12">
+                    <!-- puertas -->
+                <h5 class="center"> Numero de pedido</h5>
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                    <li><a class="dropdown-trigger" data-target="dropdown1">Asignar Puerta<i class="material-icons right">arrow_drop_down</i></a></li>
+                </ul>
+                <ul id="dropdown1" class="dropdown-content">
+                    <li><a href="#!">Puerta 1</a></li>
+                    <li><a href="#!">Puerta 2</a></li>
+                    <li><a href="#!">Puerta 3</a></li>
+                </ul>
+            </div>
+            <div class="section">
+                <table class="highlight">
+                    <thead>
+                        <tr>
+                            <th>Material</th>
+                            <th>Descripción</th>
+                            <th>kilos</th>
+                            <th>Lote</th>
+                            <th>Caducidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Alvin</td>
+                            <td>Eclair</td>
+                            <td>$0.87</td>
+                            <td>$0.87</td>
+                            <td>$0.87</td>
+                        </tr>
+                    </tbody>
+                </table>
+            <div class="section">
+                    <a onclick="M.toast({html: 'Asignado'})" class="right pulse btn">Asignar!</a>
+                </button>
+            </div>
+            </div>
+        </div>
+    </div>   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
+<script src="prueba.js"></script>
+</body>
+</html>
