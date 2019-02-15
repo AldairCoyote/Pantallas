@@ -11,66 +11,65 @@
     <title>Pedidos de Venta</title>
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <nav class="nav-extended">
-                <div class="nav-wrapper">
-                    <a class="brand-logo center">Pedidos de Venta</a>
-                </div>
-            </nav>
-           
-            <!-- Busca pedidos -->
-            <div class="col s3">
-                <ul id="nav-mobile" class="sidenav-fixed">
-                    <nav>
-                        <div class="nav-wrapper white">
-                            <form>
-                                <div class="input-field">
-                                    <input id="search" type="search" placeholder="Buscar" required>
-                                    <label class="label-icon" for="search"><i class="material-icons black-text">search</i></label>
-                                    <i class="material-icons">close</i>
-                                </div>
-                            </form>
-                        </div>
-                        <!-- Se crea la lista de pedidos -->
-                        <div id="pedidos" class="collection"></div>
-                    </nav>
-                </ul>
-            </div>
-            <div class="col s9">
-                <br>
-                <a href=index.html class="waves-effect waves-light btn left">
-                    <i class="material-icons">chevron_left</i>
-                </a>
-                <h5 class="center"> Detalles de Pedido</h5>
-                <!-- lista de puertas -->
-                <div class="input-field col s5">
-                    <select id="puertas">
-                        <option value="" disabled selected>ASIGNAR PUERTA</option>
-                    </select>
-                </div>
-            </div>
-            <!-- inicia detalles de pedidos -->
-            <div class="section col s9 right">
-                <table class="highlight">
-                    <thead>
-                        <tr>
-                            <th>MATERIAL</th>
-                            <th>DESCRIPCIÓN</th>
-                            <th>ORDEN</th>
-                            <th>LOTE</th>
-                            <th>CADUCIDAD</th>
-                        </tr>
-                    </thead>
-                    <!-- crea los detalles de pedidos -->
-                    <tbody id="tabla"></tbody>
-                </table>
-            <div class="section">
-                <a onclick="M.toast({html: 'Asignado'})" class="right pulse btn">Asignar!</a>
-            </div>
-            </div>
+  <div class="container">
+    <div class="row">
+      <nav class="nav-extended">
+        <div class="nav-wrapper">
+          <a class="brand-logo center">Pedidos de Venta</a>
         </div>
+      </nav>
+      <!-- Busca pedidos -->
+      <div class="col s3">
+        <ul id="nav-mobile" class="sidenav-fixed">
+          <nav>
+            <div class="nav-wrapper white">
+              <form>
+                <div class="input-field">
+                  <input id="search" type="search" placeholder="Buscar" required>
+                  <label class="label-icon" for="search"><i class="material-icons black-text">search</i></label>
+                  <i class="material-icons">close</i>
+                </div>
+              </form>
+            </div>
+            <!-- Se crea la lista de pedidos -->
+            <div id="pedidos" class="collection"></div>
+          </nav>
+        </ul>
+      </div>
+      <div class="col s9">
+          <br>
+          <a href=index.html class="waves-effect waves-light btn left">
+            <i class="material-icons">chevron_left</i>
+          </a>
+          <h5 class="center"> Detalles de Pedido</h5>
+          <!-- lista de puertas -->
+          <div class="input-field col s5">
+            <select id="puertas">
+              <option value="" disabled selected>ASIGNAR PUERTA</option>
+            </select>
+          </div>
+      </div>
+      <!-- inicia detalles de pedidos -->
+      <div class="section col s9 right">
+        <table class="highlight">
+          <thead>
+            <tr>
+              <th>MATERIAL</th>
+              <th>DESCRIPCIÓN</th>
+              <th>ORDEN</th>
+              <th>LOTE</th>
+              <th>CADUCIDAD</th>
+            </tr>
+          </thead>
+          <!-- crea los detalles de pedidos -->
+          <tbody id="tabla"></tbody>
+        </table>
+      <div class="section">
+        <a onclick="M.toast({html: 'Asignado'})" class="right pulse btn">Asignar!</a>
+      </div>
+      </div>
     </div>
+  </div>
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 

@@ -44,9 +44,15 @@ function genPedidos(){
     var tbl = data.Rowsets.Rowset[0]
     var lgn = tbl.Row.length
     for(i=0; i<lgn; i++){
-      $("#pedidos").append('<a class="collection-item black-text bttn">' + 'ORDEN: ' 
-      + tbl.Row[i].ORDEN + '<br>LOTE: ' + tbl.Row[i].LOTE + '</a>')
+      $("#pedidos").append('<a class="bttn waves-effect waves-light red">' + 
+      + tbl.Row[i].ORDEN + '//'+ tbl.Row[i].LOTE + '</a>')
     }
+    $('.bttn').click(function(){
+      var tot
+      tot=$(this).text()
+       console.log("Merda "+tot)
+    
+     })
   })
 }
 
@@ -74,25 +80,6 @@ function mostrarPedido(){
   // Obtenga los descendientes de cada elemento en el conjunto actual de elementos emparejados, filtrados por un selector, un objeto jQuery o un elemento.
   // Iterar sobre un objeto jQuery, ejecutando una función para cada elemento coincidente.
 
-  function reimp(){
-    $("#bttn").click(function(){
-      var tot=""
-      $(this).find("a").text()
-      // $(this).parents("a").find("td").each(function(){tot+=$(this).text()})
-      // $(this).parents("tr").find("td:eq(0)").each(function(){orden+=$(this).html()+"\n"})
-      // $(this).parents("tr").find("td:eq(1)").each(function(){lot+=$(this).html()+"\n"})
-      // $(this).parents("tr").find("td:eq(2)").each(function(){mat+=$(this).html()+"\n"})
-      // $(this).parents("tr").find("td:eq(3)").each(function(){desc+=$(this).html()+"\n"})
-      console.log("TOT: "+tot)
-   
-    })
-  }
-
-  function showcon(){
-    $(".bttn").on('click', function(){
-     alert('Putos todos')
-    })
-  }
 
 // muestra los primeros 3 pedidos no asignados
 function PDV(){
