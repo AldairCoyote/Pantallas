@@ -7,6 +7,7 @@
     $('select').formSelect()
     genPedidos()
     PDV()
+    reimp()
   })
 
   // semaforo
@@ -44,23 +45,33 @@ function genPedidos(){
     var tbl = data.Rowsets.Rowset[0]
     var lgn = tbl.Row.length
     for(i=0; i<lgn; i++){
-      $("#pedidos").append('<a class="collection-item black-text bttn">' + 'ORDEN: ' 
+      $("#pedidos").append('<a class="bttn collection-item black-text bttn"' + 'data-target="ped' + [i] + '">' + 'ORDEN: ' 
       + tbl.Row[i].ORDEN + '<br>LOTE: ' + tbl.Row[i].LOTE + '</a>')
     }
+    $(".bttn").click(function(){
+      var tot
+      tot = ($(this).text())
+      console.log(tot)
+       })
   })
 }
 
+// Obtenga los antepasados ​​de cada elemento en el conjunto actual de elementos emparejados, opcionalmente filtrado por un selector.
+// Obtenga los descendientes de cada elemento en el conjunto actual de elementos emparejados, filtrados por un selector, un objeto jQuery o un elemento.
+// Iterar sobre un objeto jQuery, ejecutando una función para cada elemento coincidente.
 
 // muestra los detalles de pedidos
 function mostrarPedido(){
   var mtr = document.getElementById('tabla')
+
   if(mtr.hasChildNodes()){
     mtr.removeChild(mtr.firstChild)
   }
   var x = $.get('prueba.json',
   function(data){
     var tbl = data.Rowsets.Rowset[0]
-      for(i = 0; i < 1; i++){
+    var lrg = tbl.Row.length
+      for(i = 0; i < lrg; i++){
         $("#tabla").append('<tr id="ped' + [i] + '">' +
         '<td>' + tbl.Row[i].MATERIAL + '</td>'+
         '<td>' + tbl.Row[i].DESCRIPCION + '</td>'+
@@ -68,29 +79,6 @@ function mostrarPedido(){
         '<td>' + tbl.Row[i].LOTE + '</td>'+
         '<td>' + tbl.Row[i].CADUCIDAD + '</td>' + '</tr>')
       }
-    })
-  }
-  // Obtenga los antepasados ​​de cada elemento en el conjunto actual de elementos emparejados, opcionalmente filtrado por un selector.
-  // Obtenga los descendientes de cada elemento en el conjunto actual de elementos emparejados, filtrados por un selector, un objeto jQuery o un elemento.
-  // Iterar sobre un objeto jQuery, ejecutando una función para cada elemento coincidente.
-
-  function reimp(){
-    $("#bttn").click(function(){
-      var tot=""
-      $(this).find("a").text()
-      // $(this).parents("a").find("td").each(function(){tot+=$(this).text()})
-      // $(this).parents("tr").find("td:eq(0)").each(function(){orden+=$(this).html()+"\n"})
-      // $(this).parents("tr").find("td:eq(1)").each(function(){lot+=$(this).html()+"\n"})
-      // $(this).parents("tr").find("td:eq(2)").each(function(){mat+=$(this).html()+"\n"})
-      // $(this).parents("tr").find("td:eq(3)").each(function(){desc+=$(this).html()+"\n"})
-      console.log("TOT: "+tot)
-   
-    })
-  }
-
-  function showcon(){
-    $(".bttn").on('click', function(){
-     alert('Putos todos')
     })
   }
 
