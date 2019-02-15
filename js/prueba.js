@@ -49,8 +49,10 @@ function genPedidos(){
     }
     $('.bttn').click(function(){
       var tot
+      var c1 = tbl.Row[i]
       tot=$(this).text()
        console.log(tot)
+       console.log(c1)
      })
   })
 }
