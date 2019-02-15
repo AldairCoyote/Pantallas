@@ -7,7 +7,6 @@
     $('select').formSelect()
     genPedidos()
     PDV()
-    reimp()
   })
 
   // semaforo
@@ -45,14 +44,14 @@ function genPedidos(){
     var tbl = data.Rowsets.Rowset[0]
     var lgn = tbl.Row.length
     for(i=0; i<lgn; i++){
-      $("#pedidos").append('<a class="bttn collection-item black-text bttn"' + 'data-target="ped' + [i] + '">' + 'ORDEN: ' 
-      + tbl.Row[i].ORDEN + '<br>LOTE: ' + tbl.Row[i].LOTE + '</a>')
+      $("#pedidos").append('<a class="bttn waves-effect waves-light red">' + 
+      + tbl.Row[i].ORDEN + '//'+ tbl.Row[i].LOTE + '</a>')
     }
-    $(".bttn").click(function(){
+    $('.bttn').click(function(){
       var tot
-      tot = ($(this).text())
-      console.log(tot)
-       })
+      tot=$(this).text()
+       console.log(tot)
+     })
   })
 }
 
@@ -81,6 +80,10 @@ function mostrarPedido(){
       }
     })
   }
+  // Obtenga los antepasados ​​de cada elemento en el conjunto actual de elementos emparejados, opcionalmente filtrado por un selector.
+  // Obtenga los descendientes de cada elemento en el conjunto actual de elementos emparejados, filtrados por un selector, un objeto jQuery o un elemento.
+  // Iterar sobre un objeto jQuery, ejecutando una función para cada elemento coincidente.
+
 
 // muestra los primeros 3 pedidos no asignados
 function PDV(){
