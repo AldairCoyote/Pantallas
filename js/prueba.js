@@ -50,8 +50,7 @@ function genPedidos(){
     $('.bttn').click(function(){
       var tot
       tot=$(this).text()
-       console.log("Merda "+tot)
-    
+       console.log(tot)
      })
   })
 }
