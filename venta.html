@@ -23,13 +23,11 @@
         <ul id="nav-mobile" class="sidenav-fixed">
           <nav>
             <div class="nav-wrapper white">
-              <form>
-                <div class="input-field">
-                  <input id="search" type="search" placeholder="Buscar Pedido" required>
-                  <label class="label-icon" for="search"><i class="material-icons black-text">search</i></label>
-                  <i class="material-icons">close</i>
-                </div>
-              </form>
+              <div class="input-field">
+                <input id="search" type="search" placeholder="Buscar Pedido" required>
+                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                <i class="material-icons">close</i>
+              </div>
             </div>
             <!-- Se crea la lista de pedidos -->
             <div id="pedidos" class="collection"></div>
@@ -64,7 +62,7 @@
           <tbody id="tabla"></tbody>
         </table>
       <div class="section">
-        <a onclick="M.toast({html: 'Asignado'})" class="right pulse btn">Asignar!</a>
+        <a id="asignar" class="right pulse btn">Asignar!</a>
       </div>
       </div>
     </div>

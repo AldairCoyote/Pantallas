@@ -7,19 +7,18 @@ $(document).ready(function(){
 
 //genera los pedidos
 function genPedidos(){
-  var json = $.get('prueba.json',
+  $.get('prueba.json',
   function(data){
     var tbl = data.Rowsets.Rowset[0]
     var lgn = tbl.Row.length
-
     //muestra los primeros 3 pedidos
     for(i=0; i<3; i++){
-      $('#psd').append('<tr>' + 
-      '<td>' + tbl.Row[i].MATERIAL + '</td>'+
-      '<td>' + tbl.Row[i].DESCRIPCION + '</td>'+
-      '<td>' + tbl.Row[i].LOTE + 
-      '<span class="new badge red right" data-badge-caption="No Asignado">' + '</span>' + 
-      '</td>' + '</tr>')
+        $('#psd').append('<tr>' + 
+        '<td>' + tbl.Row[i].MATERIAL + '</td>'+
+        '<td>' + tbl.Row[i].DESCRIPCION + '</td>'+
+        '<td>' + tbl.Row[i].LOTE + 
+        '<span class="new badge red right" data-badge-caption="No Asignado">' + '</span>' + 
+        '</td>' + '</tr>')
     }
     //genera la lista de pedidos
     for(i=0; i<lgn; i++){
@@ -37,8 +36,8 @@ function genPedidos(){
         '<li>' + 'Cliente: ' + p.Clien + '</li>'+ 
         '</a>')
       $('.bttn').click(function(){
-      $('.bttn').removeClass('active white-text')
-      $(this).addClass('active white-text')
+      $('.bttn').removeClass('active white-text asig')
+      $(this).addClass('active white-text asig')
       //genera los detalles de los pedidos
       var str = $(this).attr('value')
         if(str === p.Material + p.Lote){
@@ -52,6 +51,14 @@ function genPedidos(){
           }
       })
     }
+    //Realiza la busqueda en la lista de pedidos
+      $('#search').keyup(function() {
+          var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+          $('#pedidos a').show().filter(function() {
+              var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+              return !~text.indexOf(val);
+          }).hide()
+      })
     //semaforo
     $('#prueba').click(function(){
     $('#prueba').removeClass('red')
@@ -59,18 +66,27 @@ function genPedidos(){
     })
   })
 }
-//Realiza la busqueda en la lista de pedidos
-
 //despliega la lista de puertas
 function asignarPuerta(){
-$.get('puertas.json',
-function(data){
-var tbl = data.Rowsets.Rowset[0]
-var lgn = tbl.Row.length
-for(i=0; i<lgn; i++){
-$('#puertas').append(
-'<option '+'value='+[i]+'>' + 'PUERTA '+ tbl.Row[i].PUERTA + '</option>')
-}
-})
+  $.get('puertas.json',
+  function(data){
+  var q = $('puertas').attr('value')
+  var tbl = data.Rowsets.Rowset[0]
+  var lgn = tbl.Row.length
+    for(i=0; i<lgn; i++){
+  var w =  $('#puertas').append(
+      '<option value="puerta'+[i]+'">' + 'PUERTA '+ tbl.Row[i].PUERTA + '</option>')
+    }
+  })
 }
 asignarPuerta()
+// boton de asignar
+$('#asignar').click(function(){
+M.toast({html: 'Asignado'})
+var q = $('#tabla').text()
+var w = $('.asig').text()
+var e = $('.puerta').attr('value')
+console.log(q)
+console.log(w)
+console.log(e)
+})
